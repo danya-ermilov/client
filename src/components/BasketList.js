@@ -14,7 +14,7 @@ const BasketList = observer(() => {
     fetchBasket()
       .then((data) => (basket.products = data.products))
       .finally(() => setFetching(false));
-  }, []);
+  }, [basket]);
 
   if (fetching) {
     return <Spinner animation="border" />;

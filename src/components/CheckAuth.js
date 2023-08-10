@@ -15,7 +15,7 @@ const CheckAuth = (props) => {
         }
       })
       .finally(() => setChecking(false));
-  }, []);
+  }, [user]);
 
   if (checking) {
     return <Spinner animation="border" variant="light" />;
