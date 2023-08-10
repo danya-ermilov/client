@@ -1,13 +1,13 @@
 import { Container, Navbar, Nav } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 //import { LinkContainer } from "react-router-bootstrap";
-import { AppContext } from "./AppContext.js";
+import { AppContext } from "./AppContext";
 import { useContext } from "react";
 import { observer } from "mobx-react-lite";
 import CheckAuth from "./CheckAuth.js";
 import FetchBasket from "./FetchBasket.js";
 //{!!basket.count && <span>({basket.count})</span>}
-const NavBar = observer(() => {
+const NavBar = () => {
   const { user } = useContext(AppContext);
   return (
     <Navbar bg="dark" variant="dark">
@@ -60,6 +60,11 @@ const NavBar = observer(() => {
       </Container>
     </Navbar>
   );
-});
+};
 
 export default NavBar;
+/*
+
+
+
+*/
