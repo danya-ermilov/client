@@ -10,7 +10,7 @@ import {
 } from "../http/catalogAPI.js";
 import { get as fetchComments } from "../http/commentsAPI.js";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
+import { Document, Page } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import { AppContext } from "../components/AppContext.js";
 import { append, remove } from "../http/basketAPI.js";
