@@ -7,7 +7,7 @@ import { observer } from "mobx-react-lite";
 import CheckAuth from "./CheckAuth.js";
 import FetchBasket from "./FetchBasket.js";
 //{!!basket.count && <span>({basket.count})</span>}
-const NavBar = () => {
+const NavBar = observer(() => {
   const { user } = useContext(AppContext);
   return (
     <Navbar bg="dark" variant="dark">
@@ -60,11 +60,6 @@ const NavBar = () => {
       </Container>
     </Navbar>
   );
-};
+});
 
 export default NavBar;
-/*
-
-
-
-*/
