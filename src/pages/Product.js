@@ -18,10 +18,9 @@ import { observer } from "mobx-react-lite";
 import CommentForm from "../components/CommentForm.js";
 import CommentList from "../components/CommentList.js";
 
-const { Document, Page } = pdfjs;
 const Product = observer(() => {
   const navigate = useNavigate();
-
+  const { Document, Page } = pdfjs;
   const { id } = useParams();
   const { basket, user, comment } = useContext(AppContext);
   const [product, setProduct] = useState(null);
