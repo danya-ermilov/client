@@ -11,7 +11,6 @@ import {
 import { get as fetchComments } from "../http/commentsAPI.js";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { pdfjs } from "react-pdf";
-const { Document, Page } = pdfjs;
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import { AppContext } from "../components/AppContext.js";
 import { append, remove } from "../http/basketAPI.js";
@@ -19,6 +18,7 @@ import { observer } from "mobx-react-lite";
 import CommentForm from "../components/CommentForm.js";
 import CommentList from "../components/CommentList.js";
 
+const { Document, Page } = pdfjs;
 const Product = observer(() => {
   const navigate = useNavigate();
 
