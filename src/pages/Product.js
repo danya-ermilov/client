@@ -10,14 +10,20 @@ import {
 } from "../http/catalogAPI.js";
 import { get as fetchComments } from "../http/commentsAPI.js";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { pdfjs } from "react-pdf";
+import { Document, Page } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+import "react-pdf/dist/Page/TextLayer.css"; // Для текстового слоя
 import { AppContext } from "../components/AppContext.js";
 import { append, remove } from "../http/basketAPI.js";
 import { observer } from "mobx-react-lite";
 import CommentForm from "../components/CommentForm.js";
 import CommentList from "../components/CommentList.js";
-const { Document, Page } = pdfjs
+import { pdfjs } from "react-pdf";
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  "pdfjs-dist/build/pdf.worker.min.js",
+  import.meta.url
+).toString();
+
 const Product = observer(() => {
   const navigate = useNavigate();
   const { id } = useParams();
@@ -35,7 +41,7 @@ const Product = observer(() => {
     fetchComments(id).then((data) => (comment.comments = data.rows));
   }, [id, comment]);
 
-  const onDocumentLoadSuccess = ({ numPages }) => {
+  const handleLoadSuccess = ({ numPages }) => {
     setNumPages(numPages);
   };
 
@@ -112,7 +118,6 @@ const Product = observer(() => {
     return <Spinner animation="border" />;
   }
 
-  //console.log(product);
   return (
     <div>
       {user.isAuth ? (
@@ -215,13 +220,17 @@ const Product = observer(() => {
             <nav>
               <button
                 type="button"
-                class="btn btn-info"
+                className="btn btn-info"
                 style={{ marginRight: "3px" }}
                 onClick={goToPrevPage}
               >
                 Prev
               </button>
-              <button type="button" class="btn btn-info" onClick={goToNextPage}>
+              <button
+                type="button"
+                className="btn btn-info"
+                onClick={goToNextPage}
+              >
                 Next
               </button>
               <p>
@@ -231,7 +240,7 @@ const Product = observer(() => {
 
             <Document
               file={process.env.REACT_APP_IMG_URL + product.pdf_file}
-              onLoadSuccess={onDocumentLoadSuccess}
+              onLoadSuccess={handleLoadSuccess}
             >
               <Page pageNumber={pageNumber} />
             </Document>
@@ -262,18 +271,3 @@ const Product = observer(() => {
 });
 
 export default Product;
-
-/*
-<div style={{ display: "flex", justifyContent: "center" }}>
-            <Document
-              file={process.env.REACT_APP_IMG_URL + product.pdf_file}
-              onLoadSuccess={onDocumentLoadSuccess}
-            >
-              <div className="pages">
-                {pageNumbers.map((number) => (
-                  <Page key={number} pageNumber={number + 1} />
-                ))}
-              </div>
-            </Document>
-          </div>
-*/
