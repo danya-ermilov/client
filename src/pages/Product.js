@@ -19,10 +19,7 @@ import { observer } from "mobx-react-lite";
 import CommentForm from "../components/CommentForm.js";
 import CommentList from "../components/CommentList.js";
 import { pdfjs } from "react-pdf";
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.js",
-  import.meta.url
-).toString();
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 const Product = observer(() => {
   const navigate = useNavigate();
