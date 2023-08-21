@@ -24,6 +24,8 @@ const Info = () => {
         width={1100}
         height={500}
         src={process.env.REACT_APP_IMG_URL + "first_art.jpg"}
+        alt="Image"
+        style={{ maxWidth: "100%", height: "auto" }}
       />
       <h3 style={{ color: "OrangeRed" }}>Discover a Variety of Strategies</h3>
       <p>
@@ -37,6 +39,8 @@ const Info = () => {
         width={1100}
         height={500}
         src={process.env.REACT_APP_IMG_URL + "second_art.jpg"}
+        alt="Image"
+        style={{ maxWidth: "100%", height: "auto" }}
       />
       <h3 style={{ color: "OrangeRed" }}>Evaluate and Comment</h3>
       <p>
@@ -50,6 +54,8 @@ const Info = () => {
         width={1100}
         height={500}
         src={process.env.REACT_APP_IMG_URL + "third_art.jpg"}
+        alt="Image"
+        style={{ maxWidth: "100%", height: "auto" }}
       />
       <h3 style={{ color: "OrangeRed" }}>Join Our Trading Community</h3>
       <p>
@@ -63,6 +69,8 @@ const Info = () => {
         width={1100}
         height={500}
         src={process.env.REACT_APP_IMG_URL + "fourth_art.jpg"}
+        alt="Image"
+        style={{ maxWidth: "100%", height: "auto" }}
       />
       <br />
       <Link to="/signup" style={{ color: "Blue" }}>
