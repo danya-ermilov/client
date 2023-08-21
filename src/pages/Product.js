@@ -239,6 +239,7 @@ const Product = observer(() => {
             <Document
               file={process.env.REACT_APP_IMG_URL + product.pdf_file}
               onLoadSuccess={handleLoadSuccess}
+              renderMode="canvas"
             >
               <Page pageNumber={pageNumber} />
             </Document>
