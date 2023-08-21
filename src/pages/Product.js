@@ -234,7 +234,8 @@ const Product = observer(() => {
                 Page {pageNumber} of {numPages}
               </p>
             </nav>
-
+          </div>
+          <div style={{ display: "flex", justifyContent: "center" }}>
             <Document
               file={process.env.REACT_APP_IMG_URL + product.pdf_file}
               onLoadSuccess={handleLoadSuccess}
