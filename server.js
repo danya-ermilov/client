@@ -34,7 +34,7 @@ httpServer.get("*", (req, res) => {
   res.redirect(`https://${req.headers.host}${req.url}`);
 });
 httpServer.listen(HTTP_PORT, () => {
-  console.log(`HTTP server is running on port ${HTTP_PORT}`);
+  console.log(`HTTP is running on port ${HTTP_PORT}`);
 });
 
 /*
@@ -43,7 +43,7 @@ const path = require("path");
 
 const PORT = process.env.PORT || 8080;
 const app = express();
-
+//hj
 app.use(express.static(__dirname));
 app.use(express.static(path.resolve(__dirname, "build")));
 
