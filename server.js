@@ -1,3 +1,4 @@
+/*
 const express = require("express");
 const https = require("https");
 const fs = require("fs");
@@ -34,10 +35,10 @@ httpServer.get("*", (req, res) => {
   res.redirect(`https://${req.headers.host}${req.url}`);
 });
 httpServer.listen(HTTP_PORT, () => {
-  console.log(`HTTP is running on port ${HTTP_PORT}`);
+  console.log(`HTTP server is running on port ${HTTP_PORT}`);
 });
+*/
 
-/*
 const express = require('express');
 const path = require("path");
 
@@ -52,4 +53,4 @@ app.get("*", (req, res) => {
 });
 
 app.listen(PORT);
-*/
+
