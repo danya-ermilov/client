@@ -1,4 +1,4 @@
-
+/*
 const express = require("express");
 const https = require("https");
 const fs = require("fs");
@@ -37,12 +37,12 @@ httpServer.get("*", (req, res) => {
 httpServer.listen(HTTP_PORT, () => {
   console.log(`HTTP server is running on port ${HTTP_PORT}`);
 });
+*/
 
-/*
 const express = require('express');
 const path = require("path");
 
-const PORT = process.env.PORT || 8083;
+const PORT = process.env.PORT || 80;
 const app = express();
 
 app.use(express.static(__dirname));
@@ -53,4 +53,3 @@ app.get("*", (req, res) => {
 });
 
 app.listen(PORT);
-*/
