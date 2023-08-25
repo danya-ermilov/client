@@ -18,7 +18,7 @@ app.get("*", (req, res) => {
 
 // Путь к вашим SSL-сертификатам
 const options = {
-  key: fs.readFileSync("/etc/letsencrypt/live/botoginvest.com/prevkey.pem"),
+  key: fs.readFileSync("/etc/letsencrypt/live/botoginvest.com/privkey.pem"),
   cert: fs.readFileSync("/etc/letsencrypt/live/botoginvest.com/cert.pem"),
 };
 
